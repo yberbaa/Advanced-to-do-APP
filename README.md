@@ -39,5 +39,4 @@ Designed to demonstrate **frontend fundamentals**, **state management**, and **U
 
 ---
 
-## 📂 Project Structure
 
