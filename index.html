@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advanced To-Do</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="app">
+  <header class="header">
+    <div class="title">
+      <h1>To-Do</h1>
+      <p>LocalStorage + Drag & Drop + Filtreler + Tema + Due Date</p>
+    </div>
+
+    <div class="headerRight">
+      <button id="themeToggle" class="iconBtn" type="button" title="Tema Değiştir">Tema</button>
+      <div class="stats" id="stats">
+        <span class="chip" id="chipTotal">0</span>
+        <span class="chip" id="chipActive">0</span>
+        <span class="chip" id="chipDone">0</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <form id="form" class="add">
+      <input id="newTodo" type="text" placeholder="Yeni görev yaz ve Enter'a bas…" autocomplete="off" />
+
+      <select id="priority" class="smallSelect" title="Öncelik">
+        <option value="low">Low</option>
+        <option value="med" selected>Med</option>
+        <option value="high">High</option>
+      </select>
+
+      <input id="due" class="smallInput" type="date" title="Son Tarih" />
+
+      <button type="submit">Ekle</button>
+    </form>
+
+    <div class="controls">
+      <div class="filters" role="tablist" aria-label="Filtre">
+        <button class="tab is-active" data-filter="all" type="button">Tümü</button>
+        <button class="tab" data-filter="active" type="button">Aktif</button>
+        <button class="tab" data-filter="done" type="button">Tamam</button>
+      </div>
+
+      <div class="right">
+        <input id="search" class="search" type="search" placeholder="Ara…" />
+        <select id="sort" class="sort">
+          <option value="manual">Sıra: Manuel</option>
+          <option value="newest">Sıra: Yeni → Eski</option>
+          <option value="oldest">Sıra: Eski → Yeni</option>
+          <option value="az">Sıra: A → Z</option>
+          <option value="za">Sıra: Z → A</option>
+          <option value="priority">Sıra: Öncelik</option>
+          <option value="due">Sıra: Son Tarih</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="listWrap">
+    <ul id="list" class="list" aria-label="To-Do listesi"></ul>
+    <div id="empty" class="empty hidden">
+      <strong>Liste boş.</strong>
+      <div>Yeni görev ekleyebilirsin.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <button id="clearDone" class="link" type="button">Tamamlananları temizle</button>
+    <button id="resetAll" class="danger" type="button">Tümünü sıfırla</button>
+    <span class="hint">Manuel sırada sürükle-bırak çalışır.</span>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
